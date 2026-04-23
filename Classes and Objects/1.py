@@ -1,0 +1,35 @@
+#Create a class of student (name, sap id, marks[phy,chem,maths] ).
+# Create 3 objects by taking inputs from the user and display details of all students.
+class Student:
+    def __init__(self,name,sap_id,phy,chem,maths):
+        self.name = name
+        self.sap_id = sap_id
+        self.marks = {
+            'Phusics': phy,
+            'Chemistry': chem,
+            'Maths': maths
+        }
+
+def display(self):
+    print("\nStudent details:")
+    print("Name:" , self.name)
+    print("SAP_ID:" , self.sap_id)
+    print("Marks:")
+    for subject, marks in self.marks.items():
+        print(subject + ":", marks)
+
+students = []
+
+for i in range(3):
+    print(f"\nEnter details for Student {i+1}:")
+    name = input("Enter student name:")
+    sap_id = input("Enter student SAP ID:")
+    phy = float(input("Enter Physics marks: "))
+    chem = float(input("Enter Chemistry marks: "))
+    maths = float(input("Enter Maths marks: "))
+    s = Student(name, sap_id, phy, chem, maths)
+    students.append(s)
+
+print("\n--- All Student Details ---")
+for student in students:
+    student.display()
